@@ -7,7 +7,8 @@
 //
 
 import SpriteKit
-
+var current_player = 1
+var player_score = [0,0]
 func + (left: CGPoint, right: CGPoint) -> CGPoint {
   return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
@@ -48,7 +49,8 @@ struct PhysicsCategory {
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-  
+    let pl_lbl = SKLabelNode(fontNamed: "Chalkduster")
+   
   // 1
   let player = SKSpriteNode(imageNamed: "player")
   var monstersDestroyed = 0
@@ -61,7 +63,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     player.position = CGPoint(x:size.height * 0.1, y: size.width * 0.1 )
     // 4
     addChild(player)
-    
+    pl_lbl.text = "player :\(current_player) : \(player_score[current_player-1]) "
+    pl_lbl.fontSize = 10
+    pl_lbl.fontColor = SKColor.black
+    pl_lbl.position = CGPoint(x: size.width/2, y: size.height/2)
+   if(level == "easy")
+   {
+    wait = 0.5
+    }
+   else if(level == "hard"){
+    wait = 0.1
+    }
     physicsWorld.gravity = CGVector.zero
     physicsWorld.contactDelegate = self
     
@@ -75,7 +87,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
     backgroundMusic.autoplayLooped = true
     addChild(backgroundMusic)
-    
+    addChild(pl_lbl)
   }
   
   func random() -> CGFloat {
@@ -116,6 +128,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     let loseAction = SKAction.run() {
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        if current_player == 1
+        {
+            player_score[0] = self.counter
+        }
+        else if current_player == 2 {
+            player_score[1] = self.counter
+        }
         let gameOverScene = GameOverScene(size: self.size, won: false,score:self.counter)
       self.view?.presentScene(gameOverScene, transition: reveal)
     }
@@ -171,6 +190,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   
   func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
     print("Hit")
+    pl_lbl.text = "player :\(current_player) : \(counter) "
+   // addChild(pl_lbl)
+    
     run(SKAction.playSoundFileNamed("explosion.caf", waitForCompletion: false))
 
    // SKAction.playSoundFileNamed("explosion", waitForCompletion: false)
@@ -181,6 +203,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     monstersDestroyed += 1
     if (monstersDestroyed > 30) {
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        if current_player == 1
+        {
+            player_score[0] = counter
+        }
+        else if current_player == 2 {
+            player_score[1] = counter
+        }
         let gameOverScene = GameOverScene(size: self.size, won: true , score : counter)
       self.view?.presentScene(gameOverScene, transition: reveal)
     }

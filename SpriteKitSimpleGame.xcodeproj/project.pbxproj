@@ -16,6 +16,7 @@
 		35F7AA551D9EEAC9009C4036 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 35F7AA531D9EEAC9009C4036 /* background-music-aac.caf */; };
 		35F7AA561D9EEAC9009C4036 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 35F7AA541D9EEAC9009C4036 /* pew-pew-lei.caf */; };
 		35F7AA581D9EEE12009C4036 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F7AA571D9EEE12009C4036 /* GameOverScene.swift */; };
+		D85DBE3E1F8DAD0E0062A0EB /* gameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = D85DBE3D1F8DAD0E0062A0EB /* gameOver.sks */; };
 		D8745CD01F84573700C8E6E8 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8745CCF1F84485700C8E6E8 /* explosion.caf */; };
 		D8A38F851F85826D00082E34 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A38F841F85826D00082E34 /* MainMenuScene.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		35F7AA531D9EEAC9009C4036 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		35F7AA541D9EEAC9009C4036 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		35F7AA571D9EEE12009C4036 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		D85DBE3D1F8DAD0E0062A0EB /* gameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = gameOver.sks; sourceTree = "<group>"; };
 		D8745CCE1F84408700C8E6E8 /* Bomb_Exploding-Sound_Explorer-68256487.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bomb_Exploding-Sound_Explorer-68256487.mp3"; sourceTree = "<group>"; };
 		D8745CCF1F84485700C8E6E8 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
 		D8A38F841F85826D00082E34 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				35F7AA491D9EE88E009C4036 /* LaunchScreen.storyboard */,
 				35F7AA4C1D9EE88E009C4036 /* Info.plist */,
 				35F7AA571D9EEE12009C4036 /* GameOverScene.swift */,
+				D85DBE3D1F8DAD0E0062A0EB /* gameOver.sks */,
 				D8A38F841F85826D00082E34 /* MainMenuScene.swift */,
 			);
 			path = SpriteKitSimpleGame;
@@ -154,6 +157,7 @@
 			files = (
 				D8745CD01F84573700C8E6E8 /* explosion.caf in Resources */,
 				35F7AA551D9EEAC9009C4036 /* background-music-aac.caf in Resources */,
+				D85DBE3E1F8DAD0E0062A0EB /* gameOver.sks in Resources */,
 				35F7AA461D9EE88E009C4036 /* Main.storyboard in Resources */,
 				35F7AA481D9EE88E009C4036 /* Assets.xcassets in Resources */,
 				35F7AA561D9EEAC9009C4036 /* pew-pew-lei.caf in Resources */,

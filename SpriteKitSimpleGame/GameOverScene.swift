@@ -8,7 +8,7 @@
 
 import Foundation
 import SpriteKit
- 
+
 class GameOverScene: SKScene {
  
     init(size: CGSize, won:Bool , score: Int) {
@@ -23,12 +23,18 @@ class GameOverScene: SKScene {
    
     // 3
     let label = SKLabelNode(fontNamed: "Chalkduster")
-    label.text = message+"\(score)"
-    label.fontSize = 40
+        label.text = message+"current Score\(score)\n Player_1:\(player_score[0]) \nPlayer_1:\(player_score[1])"
+    label.fontSize = 20
     label.fontColor = SKColor.black
     label.position = CGPoint(x: size.width/2, y: size.height/2)
     addChild(label)
- 
+        if current_player == 1
+        {
+            current_player = 2
+        }
+        else{
+            current_player = 1
+        }
     // 4
     run(SKAction.sequence([
       SKAction.wait(forDuration: 3.0),
